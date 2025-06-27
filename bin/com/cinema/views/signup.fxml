@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cinema.controllers.signupController">
+   <children>
+      <AnchorPane fx:id="signUp_form" layoutX="-1.0" layoutY="-2.0" prefHeight="867.0" prefWidth="1190.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css">
+         <children>
+            <Button fx:id="signUp_btn" layoutX="515.0" layoutY="761.0" mnemonicParsing="false" onAction="#InsertOrUpdate" prefHeight="64.0" prefWidth="160.0" styleClass="signin" stylesheets="@../css/login.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="21.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="USER_PLUS" size="1.8em" />
+               </graphic>
+            </Button>
+            <TextField fx:id="SignUp_email" layoutX="112.0" layoutY="425.0" prefHeight="64.0" prefWidth="343.0" promptText=" Email" styleClass="text-fields-staff" stylesheets="@../css/dashboard.css">
+               <font>
+                  <Font name="Calibri Italic" size="22.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="SignUp_username" layoutX="112.0" layoutY="222.0" onAction="#InsertOrUpdate" prefHeight="64.0" prefWidth="343.0" promptText="Username" styleClass="text-fields-staff" stylesheets="@../css/dashboard.css">
+               <font>
+                  <Font name="Calibri Italic" size="22.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="signUp_Combo" layoutX="742.0" layoutY="321.0" onAction="#SignUp_Combo" opacity="0.54" prefHeight="64.0" prefWidth="343.0" promptText="Choose  Role" styleClass="combo-box" stylesheets="@login.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ComboBox>
+            <PasswordField fx:id="SignUp_password" layoutX="112.0" layoutY="318.0" prefHeight="64.0" prefWidth="343.0" promptText="Default Password" styleClass="text-fields-staff" stylesheets="@../css/dashboard.css">
+               <font>
+                  <Font name="Calibri Italic" size="22.0" />
+               </font>
+            </PasswordField>
+            <Label fx:id="signUpHeader" alignment="CENTER" layoutX="9.0" layoutY="23.0" maxWidth="1175.0" prefHeight="72.0" prefWidth="1175.0" stylesheets="@login.css" text="Add Staff" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="47.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon id="icon" fill="WHITE" glyphName="ENVELOPE" layoutX="107.0" layoutY="467.0" size="2.2EM" text="" />
+            <FontAwesomeIcon id="icon" fill="WHITE" glyphName="USER" layoutX="111.0" layoutY="265.0" size="2.2em" text="" />
+            <FontAwesomeIcon fill="WHITE" glyphName="UNLOCK" layoutX="111.0" layoutY="365.0" size="2.2em" />
+            <TextField fx:id="add_Staff_Phone" layoutX="112.0" layoutY="524.0" prefHeight="64.0" prefWidth="343.0" promptText="phone" styleClass="text-fields-staff" stylesheets="@../css/dashboard.css">
+               <font>
+                  <Font name="Calibri Italic" size="22.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="add_Staff_DatePicker" layoutX="740.0" layoutY="547.0" prefHeight="45.0" prefWidth="343.0" promptText="Hire Date" />
+            <ComboBox fx:id="Current_Combo" layoutX="743.0" layoutY="426.0" onAction="#Status_Combo" opacity="0.54" prefHeight="64.0" prefWidth="343.0" promptText="Current" styleClass="combo-box" stylesheets="@login.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ComboBox>
+            <TextField fx:id="add_Staff_Salary" layoutX="741.0" layoutY="224.0" prefHeight="64.0" prefWidth="343.0" promptText="Salary" styleClass="text-fields-staff" stylesheets="@../css/dashboard.css">
+               <font>
+                  <Font name="Calibri Italic" size="22.0" />
+               </font>
+            </TextField>
+            <TextArea fx:id="add_Staff_Address" layoutX="429.0" layoutY="622.0" prefHeight="111.0" prefWidth="350.0" promptText="Address" wrapText="true">
+               <font>
+                  <Font name="Calibri" size="20.0" />
+               </font></TextArea>
+            <FontAwesomeIcon fill="WHITE" glyphName="PHONE" layoutX="113.0" layoutY="572.0" size="2.2em" />
+            <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="743.0" layoutY="268.0" size="2.2em" text="" />
+            <AnchorPane layoutX="522.0" layoutY="88.0" prefHeight="142.0" prefWidth="128.0" styleClass="img-photo" stylesheets="@../css/login.css">
+               <children>
+                  <ImageView id="img" fx:id="add_Staff_Image" fitHeight="135.0" fitWidth="136.0" layoutX="4.0" layoutY="1.0" onMouseClicked="#importImage" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

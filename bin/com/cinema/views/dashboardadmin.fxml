@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="983.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cinema.controllers.DashboardControllerAdmin">
+   <children>
+      <BorderPane layoutX="-103.0" layoutY="-25.0" prefHeight="983.0" prefWidth="1900.0" styleClass="login-bg" stylesheets="@login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="69.0" prefWidth="1900.0" styleClass="top-form" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="topform" layoutX="-2.0" layoutY="-1.0" prefHeight="69.0" prefWidth="1900.0">
+                     <children>
+                        <Button fx:id="closebtn" layoutX="1817.0" mnemonicParsing="false" onAction="#closebtn" prefHeight="68.0" prefWidth="82.0" styleClass="close" stylesheets="@dashboard.css" />
+                        <FontAwesomeIcon glyphName="CLOSE" layoutX="1849.0" layoutY="44.0" size="1.8em" />
+                        <Button fx:id="minimize" layoutX="1735.0" mnemonicParsing="false" onAction="#minimize" prefHeight="68.0" prefWidth="82.0" styleClass="minimize" stylesheets="@dashboard.css" />
+                        <FontAwesomeIcon glyphName="MINUS" layoutX="1765.0" layoutY="44.0" size="1.8em" />
+                        <Label layoutX="117.0" layoutY="10.0" prefHeight="50.0" prefWidth="208.0" text="Cineverse" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="57.0" fitWidth="96.0" layoutX="31.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icon/logo2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="914.0" prefWidth="263.0" styleClass="nav-form" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="username" alignment="CENTER" layoutY="186.0" prefHeight="63.0" prefWidth="260.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="dashboard_btn" layoutX="20.0" layoutY="275.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="226.0" styleClass="ver-btn" stylesheets="@dashboard.css" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="#fcfcfc" glyphName="TABLE" size="\\" wrappingWidth="24.428571701049805" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="addMovies_btn" layoutX="20.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="227.0" styleClass="ver-btn" stylesheets="@dashboard.css" text="Movies" textFill="#fffafa">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="VIDEO_CAMERA" text="" wrappingWidth="32.0" />
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="editScreening_btn" layoutX="20.0" layoutY="422.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="226.0" styleClass="ver-btn" stylesheets="@dashboard.css" text="Screening" textFill="#fffafa">
+                     <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.2em" />
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="selling_btn" layoutX="21.0" layoutY="497.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="225.0" styleClass="ver-btn" stylesheets="@dashboard.css" text="Selling" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="#fcfcfc" glyphName="DOLLAR" size="1.2em" />
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="setting" layoutX="25.0" layoutY="821.0" mnemonicParsing="false" onAction="#setting" prefHeight="62.0" prefWidth="90.0" styleClass="sign-out" stylesheets="@dashboard.css">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="GEAR" size="2.2em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="SignOut" layoutX="140.0" layoutY="821.0" mnemonicParsing="false" onAction="#logout" prefHeight="62.0" prefWidth="90.0" styleClass="sign-out" stylesheets="@dashboard.css">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" size="2.2em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="report_btn" layoutX="18.0" layoutY="720.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="226.0" styleClass="ver-btn" stylesheets="@dashboard.css" text="Report" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="27.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="BAR_CHART" size="1.2em" />
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="foodDrink_btn" layoutX="21.0" layoutY="571.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="226.0" styleClass="ver-btn" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" text="Food&amp;Drink" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="COFFEE" size="1.2em" />
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="manage_staff__btn" layoutX="19.0" layoutY="645.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="226.0" styleClass="ver-btn" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" text="Manage Staff" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="27.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIcon fill="#f8f8f8" glyphName="USERS" />
+                     </graphic>
+                     <effect>
+                        <DropShadow color="#dabac5" />
+                     </effect>
+                  </Button>
+                  <AnchorPane layoutX="59.0" layoutY="39.0" prefHeight="138.0" prefWidth="134.0" styleClass="img-photo" stylesheets="@../css/login.css">
+                     <children>
+                        <ImageView id="img" fx:id="Admin_Image" fitHeight="131.0" fitWidth="136.0" layoutX="3.0" layoutY="1.0" onMouseClicked="#UpdateAccount" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="dashboard_form" prefHeight="914.0" prefWidth="1637.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane disable="true" prefHeight="306.0" prefWidth="1618.0">
+                           <children>
+                              <AnchorPane fx:id="dashboard_totalsoldticket" layoutX="66.0" layoutY="41.0" prefHeight="250.0" prefWidth="412.0" styleClass="card3" stylesheets="@../../../../../../../Java%20Code/Prototype/10.03.25/cinema/src/view/dashboard.css" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="41.0">
+                                 <children>
+                                    <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="248.0" prefWidth="101.0" styleClass="card3-left" stylesheets="@../../../../../../../Java%20Code/Prototype/10.03.25/cinema/src/view/dashboard.css">
+                                       <children>
+                                          <FontAwesomeIcon glyphName="TICKET" layoutX="17.0" layoutY="143.0" size="3.3em" text="" wrappingWidth="57.0" AnchorPane.bottomAnchor="97.92856979370117" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="100.57143020629883" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="178.0" layoutY="190.0" style="-fx-text-fill: black;" text="Total Sold Ticket Today" AnchorPane.bottomAnchor="35.0" AnchorPane.topAnchor="190.0">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="totalTicket" layoutX="127.0" layoutY="33.0" prefHeight="47.0" prefWidth="265.0" style="-fx-text-fill: black;" text="\$1500" AnchorPane.bottomAnchor="170.0" AnchorPane.topAnchor="33.0">
+                                       <font>
+                                          <Font name="Calibri Bold" size="38.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="dashboard_availablemovies" layoutX="1174.0" layoutY="41.0" prefHeight="250.0" prefWidth="414.0" styleClass="card1" stylesheets="@../../../../../../../Java%20Code/Prototype/10.03.25/cinema/src/view/dashboard.css" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="1174.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="41.0">
+                                 <children>
+                                    <AnchorPane layoutX="-3.0" layoutY="1.0" prefHeight="248.0" prefWidth="101.0" styleClass="card1-left" stylesheets="@../../../../../../../Java%20Code/Prototype/10.03.25/cinema/src/view/dashboard.css">
+                                       <children>
+                                          <FontAwesomeIcon glyphName="PLAY_CIRCLE" layoutX="30.0" layoutY="141.0" size="3.3em" AnchorPane.bottomAnchor="97.92856979370117" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="41.57143020629883" AnchorPane.topAnchor="100.57143020629883" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="185.0" layoutY="194.0" style="-fx-text-fill: black;" text="Available Movies-Today" AnchorPane.bottomAnchor="31.0" AnchorPane.topAnchor="194.0">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="avaliableMovie" layoutX="111.0" layoutY="23.0" prefHeight="47.0" prefWidth="281.0" style="-fx-text-fill: black;" text="1" AnchorPane.bottomAnchor="180.0" AnchorPane.topAnchor="23.0">
+                                       <font>
+                                          <Font name="Calibri" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="dashboard_totalearntoday" layoutX="617.0" layoutY="40.0" prefHeight="251.0" prefWidth="415.0" styleClass="card2" stylesheets="@../../../../../../../Java%20Code/Prototype/10.03.25/cinema/src/view/dashboard.css" AnchorPane.bottomAnchor="17.0" AnchorPane.topAnchor="40.0">
+                                 <children>
+                                    <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="248.0" prefWidth="101.0" styleClass="card2-left" stylesheets="@../../../../../../../Java%20Code/Prototype/10.03.25/cinema/src/view/dashboard.css">
+                                       <children>
+                                          <FontAwesomeIcon glyphName="MONEY" layoutX="20.0" layoutY="139.0" size="3.3em" wrappingWidth="57.738115310668945" AnchorPane.bottomAnchor="97.92856979370117" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="100.57143020629883" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="216.0" layoutY="194.0" prefHeight="25.0" prefWidth="159.0" style="-fx-text-fill: black;" text="Total Earn Today" AnchorPane.bottomAnchor="31.0" AnchorPane.topAnchor="194.0">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="totalSold" layoutX="120.0" layoutY="29.0" prefHeight="48.0" prefWidth="283.0" style="-fx-text-fill: Black;" text="\$1500" AnchorPane.bottomAnchor="174.0" AnchorPane.topAnchor="29.0">
+                                       <font>
+                                          <Font name="Calibri Bold" size="37.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <BarChart fx:id="BarChart" layoutX="19.0" layoutY="306.0" prefHeight="594.0" prefWidth="993.0">
+                          <xAxis>
+                            <CategoryAxis prefHeight="103.0" prefWidth="932.0" tickLabelFill="#f2f2f2" tickLength="5.0" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+                          </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="piechart" layoutX="1023.0" layoutY="320.0" prefHeight="554.0" prefWidth="603.0" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="addmovies_form" prefHeight="914.0" prefWidth="1637.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="Add_Movie_Form" layoutX="5.0" layoutY="4.0" prefHeight="915.0" prefWidth="397.0" styleClass="nav-form" stylesheets="@../css/dashboard.css">
+                           <children>
+                              <AnchorPane id="img_view" layoutX="62.0" layoutY="7.0" prefHeight="239.0" prefWidth="272.0" stylesheets="@dashboard.css">
+                                 <children>
+                                    <ImageView fx:id="addmovies_imageView" fitHeight="245.0" fitWidth="263.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="addmovies_import" layoutX="152.0" layoutY="284.0" mnemonicParsing="false" onAction="#importImage" prefHeight="42.0" prefWidth="107.0" styleClass="button87" stylesheets="@../css/dashboard.css" text="Import">
+                                 <font>
+                                    <Font name="Calibri Bold" size="21.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="10.0" layoutY="358.0" text="Movie Title" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="24.0" />
+                                 </font></Label>
+                              <Label layoutX="37.0" layoutY="458.0" text="Genre" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="25.0" />
+                                 </font></Label>
+                              <Label layoutX="22.0" layoutY="555.0" text="Duration" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="24.0" />
+                                 </font></Label>
+                              <Label layoutX="14.0" layoutY="651.0" text="Description" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="22.0" />
+                                 </font></Label>
+                              <TextField fx:id="addmovies_movieTitle" layoutX="130.0" layoutY="348.0" prefHeight="48.0" prefWidth="254.0" styleClass="all_fields" stylesheets="@dashboard.css" />
+                              <TextArea fx:id="addmovies_description" layoutX="134.0" layoutY="627.0" prefHeight="143.0" prefWidth="252.0" wrapText="true" />
+                              <Button fx:id="addmovies_insertbtn" layoutX="269.0" layoutY="786.0" mnemonicParsing="false" onAction="#Insert_OR_Update" prefHeight="53.0" prefWidth="114.0" styleClass="buttons" stylesheets="@dashboard.css" text="Insert" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="Calibri Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="addmovies_endbtn" layoutX="137.0" layoutY="850.0" mnemonicParsing="false" onAction="#EndShowAction" prefHeight="52.0" prefWidth="102.0" styleClass="buttons" stylesheets="@dashboard.css" text="End">
+                                 <font>
+                                    <Font name="Calibri Bold" size="22.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_add_to_show" layoutX="138.0" layoutY="787.0" mnemonicParsing="false" onAction="#btn_addmove_show" prefHeight="51.0" prefWidth="100.0" styleClass="buttons" stylesheets="@dashboard.css" text="Show" />
+                              <JFXTimePicker fx:id="addmovies_duration" layoutX="134.0" layoutY="544.0" prefHeight="51.0" prefWidth="253.0" />
+                              <ComboBox fx:id="addmovies_genre" layoutX="131.0" layoutY="446.0" prefHeight="54.0" prefWidth="252.0" styleClass="all_fields" stylesheets="@../css/dashboard.css" />
+                              <Button fx:id="addmovies_delete" layoutX="276.0" layoutY="850.0" mnemonicParsing="false" onAction="#DeleteUpcomingAction" prefHeight="51.0" prefWidth="100.0" styleClass="buttons" stylesheets="@dashboard.css" text="Delete" />
+                              <Button layoutX="18.0" layoutY="787.0" mnemonicParsing="false" onAction="#MovieCancel" prefHeight="52.0" prefWidth="102.0" styleClass="buttons" stylesheets="@dashboard.css" text="Cancel">
+                                 <font>
+                                    <Font name="Calibri Bold" size="22.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="408.0" layoutY="1.0" prefHeight="913.0" prefWidth="1222.0" styleClass="nav-form" stylesheets="@../css/dashboard.css">
+                           <children>
+                              <TextField fx:id="addmovies_search" layoutX="34.0" layoutY="20.0" onKeyTyped="#searchAddMovies" prefHeight="45.0" prefWidth="289.0" promptText="Search" styleClass="table-view-search" stylesheets="@dashboard.css">
+                                 <font>
+                                    <Font name="Calibri" size="26.0" />
+                                 </font>
+                              </TextField>
+                              <FontAwesomeIcon fill="#d3c2c2" glyphName="SEARCH" layoutX="55.0" layoutY="50.0" size="1.5em" />
+                              <TableView fx:id="addmovies_tableView" layoutX="34.0" layoutY="90.0" onMouseClicked="#selectAddMoviesList" prefHeight="799.0" prefWidth="1170.0">
+                                <columns>
+                                  <TableColumn fx:id="addmovies_col_movieTitle" prefWidth="271.0" text="Movie Title" />
+                                  <TableColumn fx:id="addmovies_col_genre" prefWidth="128.0" text="Genre" />
+                                    <TableColumn fx:id="addmovies_col_duration" prefWidth="224.0" text="Duration" />
+                                    <TableColumn fx:id="addmovies_col_description" prefWidth="287.0" text="Description" />
+                                    <TableColumn fx:id="addmovies_col_current" prefWidth="259.0" text="Current" />
+                                </columns>
+                              </TableView>
+                              <ComboBox fx:id="movie_genre_search" layoutX="459.0" layoutY="19.0" onKeyTyped="#searchAddMovies" onMouseClicked="#searchAddMovies" prefHeight="46.0" prefWidth="262.0" promptText="Search by Genre" />
+                              <ComboBox fx:id="movie_Current_search" layoutX="856.0" layoutY="19.0" onKeyTyped="#searchAddMovies" onMouseClicked="#searchAddMovies" prefHeight="46.0" prefWidth="265.0" promptText="Search by Current" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="Show_adding_Form" layoutX="-1.0" prefHeight="924.0" prefWidth="403.0" styleClass="nav-form" stylesheets="@../css/dashboard.css" visible="false">
+                           <children>
+                              <AnchorPane id="img_view" layoutX="73.0" layoutY="24.0" prefHeight="259.0" prefWidth="270.0" stylesheets="@dashboard.css">
+                                 <children>
+                                    <ImageView fx:id="Show_adding_Form_image" fitHeight="246.0" fitWidth="260.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="Show_adding_Form_label" alignment="CENTER" layoutX="11.0" layoutY="318.0" prefHeight="21.0" prefWidth="382.0" text="Label" textFill="#fffbfb">
+                                 <font>
+                                    <Font name="Calibri Bold" size="37.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="30.0" layoutY="447.0" text="Room" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="718.0" prefHeight="31.0" prefWidth="131.0" text="Show Time" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cb_add_to_show_room" layoutX="140.0" layoutY="434.0" prefHeight="56.0" prefWidth="228.0" promptText="Choose" styleClass="all_fields" stylesheets="@dashboard.css" />
+                              <Button fx:id="btn_add_to_show_cancel" layoutX="63.0" layoutY="802.0" mnemonicParsing="false" onAction="#btn_addmove_show_cancel" styleClass="buttons" stylesheets="@dashboard.css" text="Cancel" />
+                              <Button layoutX="240.0" layoutY="802.0" mnemonicParsing="false" onAction="#AddScreening" prefHeight="48.0" prefWidth="112.0" styleClass="buttons" stylesheets="@dashboard.css" text="Add" />
+                              <Label layoutX="16.0" layoutY="531.0" text="Start Date" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="13.0" layoutY="636.0" text="End Date" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="Show_adding_Form_start_date" layoutX="141.0" layoutY="525.0" prefHeight="43.0" prefWidth="227.0" />
+                              <DatePicker fx:id="Show_adding_Form_end_date" layoutX="140.0" layoutY="630.0" prefHeight="43.0" prefWidth="228.0" />
+                              <JFXTimePicker fx:id="Show_adding_Form_showtime" layoutX="140.0" layoutY="707.0" prefHeight="52.0" prefWidth="248.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="editscreening_form" prefHeight="915.0" prefWidth="1637.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="5.0" layoutY="6.0" prefHeight="915.0" prefWidth="391.0" styleClass="nav-form" stylesheets="@dashboard.css">
+                           <children>
+                              <AnchorPane id="img_view" layoutX="64.0" layoutY="21.0" prefHeight="239.0" prefWidth="272.0" stylesheets="@dashboard.css">
+                                 <children>
+                                    <ImageView fx:id="editscreening_imageView" fitHeight="229.0" fitWidth="261.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="editscreening_title" alignment="CENTER" layoutX="9.0" layoutY="280.0" prefHeight="21.0" prefWidth="382.0" text="Label" textFill="#fffbfb">
+                                 <font>
+                                    <Font name="Calibri Bold" size="37.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="9.0" layoutY="346.0" prefHeight="21.0" prefWidth="374.0" text="Title" textFill="#fffefe">
+                                 <font>
+                                    <Font name="Calibri" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="31.0" layoutY="426.0" text="Room" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="2.0" layoutY="667.0" prefHeight="31.0" prefWidth="126.0" text="Show Time" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="editscreening_room" layoutX="127.0" layoutY="414.0" prefHeight="56.0" prefWidth="253.0" promptText="Choose" styleClass="all_fields" stylesheets="@dashboard.css" />
+                              <Button fx:id="editscreening_updatebtn" layoutX="255.0" layoutY="808.0" mnemonicParsing="false" onAction="#EditScreenUpdateOnAction" prefHeight="48.0" prefWidth="109.0" styleClass="buttons" stylesheets="@dashboard.css" text="Update" />
+                              <Label layoutX="7.0" layoutY="549.0" prefHeight="42.0" prefWidth="116.0" text="ShowDate" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="editscreening_showDate" layoutX="130.0" layoutY="546.0" prefHeight="48.0" prefWidth="251.0" />
+                              <JFXTimePicker fx:id="editscreening_showTime" layoutX="133.0" layoutY="660.0" prefHeight="46.0" prefWidth="244.0" />
+                              <Button fx:id="editscreening_endbtn" layoutX="46.0" layoutY="808.0" mnemonicParsing="false" onAction="#EditScreenDeletebtnAction" prefHeight="48.0" prefWidth="104.0" styleClass="buttons" stylesheets="@dashboard.css" text="Delete" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="402.0" layoutY="5.0" prefHeight="915.0" prefWidth="1229.0" styleClass="nav-form" stylesheets="@dashboard.css">
+                           <children>
+                              <TextField fx:id="editscreening_search" layoutX="15.0" layoutY="36.0" onKeyTyped="#searchEditScreening" prefHeight="48.0" prefWidth="269.0" promptText="Search" styleClass="table-view-search" stylesheets="@dashboard.css">
+                                 <font>
+                                    <Font name="Calibri Bold" size="23.0" />
+                                 </font>
+                              </TextField>
+                              <FontAwesomeIcon fill="#e4e3e3" glyphName="SEARCH" layoutX="39.0" layoutY="71.0" size="1.8em" />
+                              <TableView fx:id="editscreening_tableView" layoutX="15.0" layoutY="101.0" onMouseClicked="#selectEditScreening" prefHeight="795.0" prefWidth="1195.0">
+                                <columns>
+                                  <TableColumn id="table-column1" fx:id="editscreening_col_movieTitle" prefWidth="245.0" text="Movie Title" />
+                                  <TableColumn id="table-column2" fx:id="editscreening_col_genre" prefWidth="112.0" text="Genre" />
+                                    <TableColumn id="table-column3" fx:id="editscreening_col_duration" prefWidth="122.0" text="Duration" />
+                                    <TableColumn id="table-column3" fx:id="editscreening_col_current" prefWidth="146.0" text="Current" />
+                                    <TableColumn id="table-column1" fx:id="editscreening_col_showDate" prefWidth="139.0" text="Show Date" />
+                                    <TableColumn id="table-column1" fx:id="editscreening_col_ShowTime" prefWidth="128.0" text="ShowTime" />
+                                    <TableColumn id="table-column1" fx:id="editscreening_col_room" prefWidth="149.0" text="Room" />
+                                    <TableColumn id="table-column1" fx:id="editscreening_col_totalRevenue" prefWidth="153.0" text="Total Revenue" />
+                                </columns>
+                              </TableView>
+                              <ComboBox fx:id="edit_movie_search_room" layoutX="1016.0" layoutY="30.0" onKeyTyped="#searchEditScreening" onMouseClicked="#searchEditScreening" prefHeight="46.0" prefWidth="190.0" promptText="Room" styleClass="table-view-searching" stylesheets="@../css/dashboard.css" />
+                              <ComboBox fx:id="edit_movie_search_current" layoutX="316.0" layoutY="35.0" onKeyTyped="#searchEditScreening" onMouseClicked="#searchEditScreening" prefHeight="42.0" prefWidth="209.0" promptText="Current" styleClass="table-view-searching" stylesheets="@../css/dashboard.css" />
+                              <DatePicker fx:id="edit_movie_showDate" editable="false" layoutX="558.0" layoutY="35.0" onKeyTyped="#searchEditScreening" onMouseClicked="#searchEditScreening" prefHeight="45.0" prefWidth="194.0" promptText="Show Date" styleClass="all_fields" stylesheets="@../css/dashboard.css" />
+                              <JFXTimePicker fx:id="edit_movie_showTime" layoutX="788.0" layoutY="34.0" onKeyTyped="#searchEditScreening" onMouseClicked="#searchEditScreening" prefHeight="47.0" prefWidth="205.0" styleClass="table-view-searching" stylesheets="@../css/dashboard.css" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="selling_form" layoutX="1.0" layoutY="-1.0" onDragDetected="#switchForm" prefHeight="918.0" prefWidth="1636.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" visible="false" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                     <children>
+                        <TableView fx:id="Sale_table" layoutX="551.0" layoutY="25.0" prefHeight="420.0" prefWidth="1079.0" stylesheets="@../css/dashboard.css">
+                           <columns>
+                              <TableColumn fx:id="selling_col_movietitle" prefWidth="146.0" text="Movie Title" />
+                              <TableColumn fx:id="selling_col_show_date" prefWidth="122.0" text="Show_Date" />
+                              <TableColumn fx:id="selling_col_show_time" prefWidth="120.0" text="Show_Time" />
+                              <TableColumn fx:id="selling_col_room" prefWidth="131.0" text="Room" />
+                              <TableColumn fx:id="selling_col_seat" minWidth="3.0" prefWidth="118.0" text="Seat" />
+                              <TableColumn fx:id="selling_col_saletime" prefWidth="141.0" text="SaleDate" />
+                              <TableColumn fx:id="selling_col_totalcost" minWidth="0.0" prefWidth="145.0" text="Price" />
+                              <TableColumn fx:id="selling_col_staff" prefWidth="151.0" text="Sold By (Staff)" />
+                           </columns>
+                        </TableView>
+                        <AnchorPane layoutX="14.0" layoutY="123.0" prefHeight="773.0" prefWidth="524.0">
+                           <children>
+                              <Label fx:id="cb_selected_Mtitle" alignment="CENTER" layoutX="-1.0" prefHeight="55.0" prefWidth="526.0" text="MovieTitle" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="45.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="cb_selected_Mimage" fitHeight="245.0" fitWidth="263.0" layoutX="131.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
+                              <Label layoutX="68.0" layoutY="396.0" prefHeight="42.0" prefWidth="163.0" text="SOLD SEAT" textFill="#fcfcfc">
+                                 <font>
+                                    <Font name="Calibri" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="49.0" layoutY="520.0" prefHeight="35.0" prefWidth="204.0" text="BOOKED SEAT" textFill="#eeeeee">
+                                 <font>
+                                    <Font name="Calibri" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="637.0" prefHeight="37.0" prefWidth="174.0" text="TOTAL PRICE" textFill="#f5f5f5">
+                                 <font>
+                                    <Font name="Calibri" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="selecteM_LbSoldSeat" layoutX="318.0" layoutY="396.0" prefHeight="42.0" prefWidth="191.0" text="0" textFill="#f2f2f2">
+                                 <font>
+                                    <Font name="Calibri" size="29.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="selecteM_LbBookedSeat" layoutX="320.0" layoutY="515.0" prefHeight="42.0" prefWidth="189.0" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="selecteM_LbTotalprice" layoutX="318.0" layoutY="633.0" prefHeight="42.0" prefWidth="198.0" text="0" textFill="#fcfcfc">
+                                 <font>
+                                    <Font name="Calibri" size="29.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <ComboBox fx:id="cbSelecteMovie" layoutX="14.0" layoutY="25.0" prefHeight="56.0" prefWidth="484.0" />
+                        <PieChart fx:id="selling_form_pichart" layoutX="559.0" layoutY="459.0" prefHeight="437.0" prefWidth="536.0" />
+                        <BarChart fx:id="sellingfrom_barchart" layoutX="1095.0" layoutY="458.0" prefHeight="457.0" prefWidth="541.0">
+                          <xAxis>
+                            <CategoryAxis prefHeight="61.0" prefWidth="469.0" side="BOTTOM" tickLabelFill="#f5f3f3" tickLength="3.0" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" tickLabelFill="#cdcdcd" />
+                          </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+                  
+                  <AnchorPane fx:id="report_form" layoutX="-1.0" layoutY="-3.0" onDragDetected="#switchForm" prefHeight="930.0" prefWidth="1628.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" visible="false">
+                     <children>
+                        <RadioButton fx:id="rbWeekly" layoutX="1174.0" layoutY="42.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Weekly" textFill="#eeeeee">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="rbMonthly" layoutX="1319.0" layoutY="44.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="116.0" text="Monthly" textFill="#eeeeee">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font></RadioButton>
+                        <RadioButton fx:id="rbYearly" layoutX="1455.0" layoutY="44.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="94.0" text="Yearly" textFill="#eeeeee">
+                           <font>
+                              <Font name="Calibri" size="21.0" />
+                           </font></RadioButton>
+                        <TextField fx:id="report_search" layoutX="38.0" layoutY="45.0" onKeyTyped="#searchReport" prefHeight="41.0" prefWidth="211.0" promptText="Search" styleClass="table-view-search" stylesheets="@../css/dashboard.css">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font></TextField>
+                        <TableView fx:id="report_movie_Table" layoutX="38.0" layoutY="106.0" onMouseClicked="#Report_Movie_ChoiceOnAction" prefHeight="283.0" prefWidth="424.0">
+                          <columns>
+                            <TableColumn fx:id="report_movie_Table_movieName" prefWidth="182.0" text="Movie Name" />
+                            <TableColumn fx:id="report_movie_Table_genre" prefWidth="111.0" text="Genre" />
+                              <TableColumn fx:id="report_movie_Table_duration" prefWidth="127.0" text="Duration" />
+                          </columns>
+                        </TableView>
+                        <LineChart fx:id="report_ticket_sale_over_time" layoutX="485.0" layoutY="88.0" prefHeight="393.0" prefWidth="700.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" tickLabelFill="#f5f5f5" fx:id="xAxis" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="yAxis" side="LEFT" tickLabelFill="#fcfcfc" />
+                          </yAxis>
+                        </LineChart>
+                        <PieChart fx:id="genreSalesPieChart" layoutX="758.0" layoutY="534.0" prefHeight="334.0" prefWidth="436.0" />
+                        <Label layoutX="887.0" layoutY="872.0" prefHeight="30.0" prefWidth="178.0" text="Revenue Per Genre" textFill="#f5ebeb">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font></Label>
+                        <Label layoutX="205.0" layoutY="407.0" prefHeight="30.0" prefWidth="121.0" text="Movie" textFill="#f5ebeb">
+                           <font>
+                              <Font name="Calibri" size="24.0" />
+                           </font></Label>
+                        <AnchorPane layoutX="3.0" layoutY="475.0" prefHeight="436.0" prefWidth="376.0">
+                           <children>
+                              <Label layoutX="45.0" layoutY="14.0" prefHeight="37.0" prefWidth="281.0" text="Movie Information" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri Bold" size="34.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1.0" layoutY="111.0" prefHeight="30.0" prefWidth="172.0" text="Total ShowTimes" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font></Label>
+                              <Label layoutX="2.0" layoutY="155.0" prefHeight="30.0" prefWidth="176.0" text="Total SoldTicket" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font></Label>
+                              <Label layoutX="2.0" layoutY="199.0" prefHeight="30.0" prefWidth="195.0" text="Total CancelBooking" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="23.0" />
+                                 </font></Label>
+                              <Label layoutX="3.0" layoutY="287.0" prefHeight="27.0" prefWidth="170.0" text="Showed Rooms" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="23.0" />
+                                 </font></Label>
+                              <Label layoutX="3.0" layoutY="362.0" prefHeight="30.0" prefWidth="140.0" text="Showed Dates" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font></Label>
+                              <Label layoutX="4.0" layoutY="243.0" prefHeight="30.0" prefWidth="161.0" text="Total Revenue" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font></Label>
+                              <Label fx:id="report_movie_label" alignment="CENTER" layoutX="4.0" layoutY="58.0" prefHeight="37.0" prefWidth="349.0" text="Movie Title" textAlignment="CENTER" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="report_lb_show_times" layoutX="201.0" layoutY="111.0" prefHeight="30.0" prefWidth="169.0" text="0" textAlignment="JUSTIFY" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="23.0" />
+                                 </font></Label>
+                              <Label fx:id="report_lb_sold_ticket" layoutX="200.0" layoutY="155.0" prefHeight="30.0" prefWidth="171.0" text="0" textAlignment="JUSTIFY" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="22.0" />
+                                 </font></Label>
+                              <Label fx:id="report_lb_cancel_book" layoutX="201.0" layoutY="196.0" prefHeight="30.0" prefWidth="164.0" text="0" textAlignment="JUSTIFY" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="21.0" />
+                                 </font></Label>
+                              <Label fx:id="report_lb_showedRoom" layoutX="160.0" layoutY="278.0" prefHeight="48.0" prefWidth="211.0" textAlignment="JUSTIFY" textFill="#f5ebeb" wrapText="true" />
+                              <Label fx:id="report_lb_showedDate" layoutX="153.0" layoutY="334.0" prefHeight="100.0" prefWidth="222.0" textAlignment="JUSTIFY" textFill="#f5ebeb" wrapText="true">
+                                 <font>
+                                    <Font name="Calibri" size="21.0" />
+                                 </font></Label>
+                              <Label fx:id="report_lb_revenue" layoutX="201.0" layoutY="243.0" prefHeight="30.0" prefWidth="157.0" text="0" textAlignment="JUSTIFY" textFill="#f5ebeb">
+                                 <font>
+                                    <Font name="Calibri" size="22.0" />
+                                 </font></Label>
+                           </children>
+                        </AnchorPane>
+                        <DatePicker fx:id="startDatePicker" layoutX="556.0" layoutY="47.0" prefHeight="31.0" prefWidth="205.0" promptText="Start Date" stylesheets="@../css/dashboard.css" />
+                        <DatePicker fx:id="endDatePicker" layoutX="792.0" layoutY="47.0" prefHeight="31.0" prefWidth="192.0" promptText="End Date" />
+                        <BarChart fx:id="barChartByDayOfWeek" layoutX="1185.0" layoutY="88.0" prefHeight="394.0" prefWidth="417.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="dayOfWeekXAxis" side="BOTTOM" tickLabelFill="#fcfcfc" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="ticketSalesYAxis" side="LEFT" tickLabelFill="#fcf3f3" />
+                          </yAxis>
+                        </BarChart>
+                        <RadioButton fx:id="rbDaily" layoutX="1055.0" layoutY="42.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="94.0" text="Daily" textFill="#eeeeee">
+                           <font>
+                              <Font name="Calibri" size="22.0" />
+                           </font></RadioButton>
+                        <LineChart fx:id="report_sale_over_time_byMovie" layoutX="362.0" layoutY="521.0" prefHeight="376.0" prefWidth="382.0">
+                           <xAxis>
+                              <CategoryAxis fx:id="sale_over_time_byMoviexAxis" side="BOTTOM" tickLabelFill="#f5f2f2" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="sale_over_time_byMovieyAxis" side="LEFT" tickLabelFill="#eee9e9" />
+                           </yAxis>
+                        </LineChart>
+                        <StackedBarChart fx:id="sal_par_movie_chart" layoutX="1222.0" layoutY="520.0" prefHeight="367.0" prefWidth="392.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="sal_par_movie_xAxis" side="BOTTOM" tickLabelFill="#e8dddd" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="sal_par_movie_yAxis" prefHeight="314.0" prefWidth="0.0" side="LEFT" tickLabelFill="#e8e1e1" />
+                          </yAxis>
+                        </StackedBarChart>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SEARCH" layoutX="62.0" layoutY="74.0" size="1.3em" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="food_form" prefHeight="914.0" prefWidth="1637.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css" visible="false">
+                     <children>
+                        <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="903.0" prefWidth="396.0" styleClass="nav-form" stylesheets="@../css/dashboard.css">
+                           <children>
+                              <AnchorPane id="img_view" layoutX="66.0" layoutY="30.0" prefHeight="251.0" prefWidth="283.0" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css">
+                                 <children>
+                                    <ImageView fx:id="addfood_imageview" fitHeight="245.0" fitWidth="252.0" layoutX="2.0" pickOnBounds="true" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="addfood_import" layoutX="158.0" layoutY="298.0" mnemonicParsing="false" onAction="#importFImage" prefHeight="45.0" prefWidth="95.0" styleClass="button87" stylesheets="@../css/dashboard.css" text="import">
+                                 <font>
+                                    <Font name="Calibri Bold" size="21.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="5.0" layoutY="412.0" prefHeight="26.0" prefWidth="123.0" text="Food&amp;Drink" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="540.0" prefHeight="27.0" prefWidth="116.0" text="Category" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="add_food_drink" layoutX="138.0" layoutY="401.0" prefHeight="53.0" prefWidth="256.0" styleClass="all_fields" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" />
+                              <Button fx:id="food_delete_btn" layoutX="277.0" layoutY="782.0" mnemonicParsing="false" onAction="#deleteFood" prefHeight="53.0" prefWidth="110.0" styleClass="buttons" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" text="Delete" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="Calibri Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <ComboBox fx:id="add_category" layoutX="135.0" layoutY="526.0" prefHeight="54.0" prefWidth="252.0" />
+                              <Label layoutX="20.0" layoutY="675.0" prefHeight="30.0" prefWidth="81.0" text="Price" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="add_price" layoutX="135.0" layoutY="657.0" prefHeight="48.0" prefWidth="252.0" styleClass="all_fields" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" />
+                              <Button fx:id="food_insert_btn" layoutX="147.0" layoutY="782.0" mnemonicParsing="false" onAction="#insertFood" prefHeight="53.0" prefWidth="110.0" styleClass="buttons" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" text="Insert" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="Calibri Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="food_clear" layoutX="18.0" layoutY="782.0" mnemonicParsing="false" onAction="#clearFoodList" prefHeight="53.0" prefWidth="110.0" styleClass="buttons" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css" text="Clear" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="Calibri Bold" size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="410.0" layoutY="6.0" prefHeight="902.0" prefWidth="1220.0" styleClass="nav-form" stylesheets="@../css/dashboard.css">
+                           <children>
+                              <TextField fx:id="food_search" layoutX="34.0" layoutY="20.0" onKeyTyped="#searchfood" prefHeight="45.0" prefWidth="421.0" promptText="Search" styleClass="table-view-search" stylesheets="@../../../../../../CinemaApp%20v2.0/resources/com/cinema/views/dashboard.css">
+                                 <font>
+                                    <Font name="Calibri" size="26.0" />
+                                 </font>
+                              </TextField>
+                              <FontAwesomeIcon fill="#d3c2c2" glyphName="SEARCH" layoutX="55.0" layoutY="50.0" size="1.5em" />
+                              <TableView fx:id="addfood_tableview" layoutX="34.0" layoutY="90.0" onMouseClicked="#selectFoodList" prefHeight="799.0" prefWidth="1170.0">
+                                 <columns>
+                                    <TableColumn id="table-column1" fx:id="add_food_col" prefWidth="443.0" styleClass="table-cell" text="Food &amp; Drink" />
+                                    <TableColumn id="table-column2" fx:id="add_col_category" prefWidth="326.0" text="Category" />
+                                    <TableColumn id="table-column5" fx:id="add_col_price" prefWidth="400.0" text="Price" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="Staff_Form" layoutX="1.0" layoutY="-4.0" prefHeight="931.0" prefWidth="1632.0" styleClass="nav-form1" stylesheets="@../css/dashboard.css">
+                     <children>
+                        <Button fx:id="signin_createAccount" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="66.0" prefWidth="300.0" styleClass="link" stylesheets="@../css/dashboard.css" text="Add Account" textFill="#f2f2f2">
+                           <font>
+                              <Font name="Calibri" size="29.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" fontSmoothingType="LCD" glyphName="USER_PLUS" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <ScrollPane layoutX="14.0" layoutY="169.0" prefHeight="727.0" prefWidth="1606.0">
+                           <content>
+                              <VBox fx:id="staff_box" prefHeight="725.0" prefWidth="1595.0" />
+                           </content>
+                        </ScrollPane>
+                        <AnchorPane layoutX="17.0" layoutY="98.0" prefHeight="60.0" prefWidth="1600.0">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="1600.0">
+                                 <children>
+                                    <Label fx:id="lb_ID" prefHeight="61.0" prefWidth="113.0" text="  UserID" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lb_name" prefHeight="61.0" prefWidth="190.0" text="            Name" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lb_userType" layoutX="108.0" layoutY="10.0" prefHeight="61.0" prefWidth="176.0" text="     Department" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox prefHeight="61.0" prefWidth="254.0">
+                                       <children>
+                                          <Label fx:id="lb_phone" prefHeight="63.0" prefWidth="254.0" text="                Contacts" textFill="WHITE">
+                                             <font>
+                                                <Font name="Calibri" size="25.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <Label fx:id="lb_hire_date" prefHeight="59.0" prefWidth="176.0" text="        Hired Date" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lb_address" layoutX="1144.0" layoutY="10.0" prefHeight="59.0" prefWidth="324.0" text="                     Address" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="26.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lb_salary" prefHeight="59.0" prefWidth="150.0" text="           Salary" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lb_Statatus" layoutX="1302.0" layoutY="10.0" prefHeight="59.0" prefWidth="211.0" text="           Status" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="271.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cinema.controllers.FoodCardController">
+   <children>
+      <ImageView fx:id="food_image_card" fitHeight="238.0" fitWidth="265.0" layoutX="3.0" layoutY="2.0" pickOnBounds="true" />
+      <Label fx:id="fname_card" alignment="CENTER" layoutX="2.0" layoutY="246.0" prefHeight="36.0" prefWidth="265.0" text="Apple">
+         <font>
+            <Font name="Calibri Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="foodprice_card" alignment="CENTER" layoutX="19.0" layoutY="289.0" prefHeight="36.0" prefWidth="237.0" text="MMK 2000">
+         <font>
+            <Font name="Calibri" size="23.0" />
+         </font>
+      </Label>
+   </children>
+   <styleClass>
+      <String fx:value="scrollpane" />
+      <String fx:value="cardimage" />
+   </styleClass>
+</AnchorPane>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="398.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cinema.controllers.FoodReceipts">
+   <children>
+      <Label layoutX="122.0" layoutY="35.0" text="Cineverse">
+         <font>
+            <Font name="Calibri Bold Italic" size="37.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="7.0" layoutY="90.0" prefHeight="28.0" prefWidth="379.0" text="Tharkayta township, Yangon">
+         <font>
+            <Font name="Calibri Italic" size="24.0" />
+         </font></Label>
+      <Label fx:id="food_date_Label" layoutX="39.0" layoutY="130.0" text="01/02/2019">
+         <font>
+            <Font name="Calibri" size="19.0" />
+         </font></Label>
+      <Label fx:id="food_time_Label" layoutX="296.0" layoutY="130.0" text="14:55PM">
+         <font>
+            <Font name="Calibri" size="19.0" />
+         </font></Label>
+      <Label layoutX="54.0" layoutY="401.0" text="TOTAL COST">
+         <font>
+            <Font name="Calibri" size="21.0" />
+         </font></Label>
+      <Label layoutX="88.0" layoutY="458.0" text="Thank you &amp; Come again">
+         <font>
+            <Font name="Castellar" size="15.0" />
+         </font></Label>
+      <Separator layoutX="11.0" layoutY="382.0" prefHeight="17.0" prefWidth="370.0" />
+      <Separator layoutX="12.0" layoutY="430.0" prefHeight="17.0" prefWidth="370.0" />
+      
+      <!-- Food List - Labels inside VBox -->
+      <VBox fx:id="foodList" layoutX="19.0" layoutY="169.0" prefHeight="213.0" prefWidth="176.0">
+         <!-- Dynamically add labels for each food item here -->
+      </VBox>
+      
+      <!-- Price List - Labels inside VBox -->
+      <VBox fx:id="priceList" layoutX="230.0" layoutY="169.0" prefHeight="213.0" prefWidth="154.0">
+         <!-- Dynamically add labels for each price here -->
+      </VBox>
+
+      <Label fx:id="total_cost" layoutX="230.0" layoutY="390.0" prefHeight="34.0" prefWidth="154.0">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font></Label>
+      <FontAwesomeIcon fill="RED" glyphName="HEART" layoutX="146.0" layoutY="510.0" opacity="0.55" size="1.6em" />
+      <FontAwesomeIcon fill="RED" glyphName="HEART" layoutX="190.0" layoutY="510.0" opacity="0.55" size="1.6em" />
+      <FontAwesomeIcon fill="RED" glyphName="HEART" layoutX="239.0" layoutY="510.0" opacity="0.55" size="1.6em" />
+      <Separator layoutX="5.0" layoutY="-2.0" prefHeight="17.0" prefWidth="386.0">
+         <effect>
+            <Lighting diffuseConstant="1.12" specularConstant="0.0" specularExponent="17.56">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#c4b1d0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+      <Separator layoutX="-1.0" layoutY="15.0" orientation="VERTICAL" prefHeight="505.0" prefWidth="13.0">
+         <effect>
+            <Lighting diffuseConstant="1.29">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#c4b1d0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+      <Separator layoutX="388.0" layoutY="13.0" orientation="VERTICAL" prefHeight="505.0" prefWidth="13.0">
+         <effect>
+            <Lighting diffuseConstant="1.15">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#c4b1d0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+      <Separator layoutX="8.0" layoutY="514.0" prefHeight="17.0" prefWidth="379.0">
+         <effect>
+            <Lighting diffuseConstant="1.24">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#c4b1d0" />
+               </light>
+            </Lighting>
+         </effect>
+      </Separator>
+   </children>
+</AnchorPane>

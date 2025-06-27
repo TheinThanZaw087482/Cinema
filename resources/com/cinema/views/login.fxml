@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="983.0" prefWidth="1906.0" styleClass="form" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cinema.controllers.LoginController">
+   <children>
+      <AnchorPane fx:id="signin_form" layoutX="371.0" layoutY="148.0" prefHeight="479.0" prefWidth="1164.0" styleClass="login-bg" stylesheets="@login.css">
+         <children>
+            <Button fx:id="signin_loginbtn" alignment="CENTER" layoutX="485.0" layoutY="383.0" mnemonicParsing="false" onAction="#signin" prefHeight="64.0" prefWidth="160.0" styleClass="signin" stylesheets="@login.css" text="    Login">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="Calibri Bold" size="21.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon glyphName="SIGN_IN" size="2em" />
+               </graphic></Button>
+            <TextField id="text-fields" fx:id="signin_username" layoutX="361.0" layoutY="143.0" onAction="#signin" prefHeight="64.0" prefWidth="381.0" promptText="UserName" styleClass="text-fields" stylesheets="@login.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="Calibri Bold Italic" size="20.0" />
+               </font></TextField>
+            <PasswordField id="text-fields" fx:id="signin_password" layoutX="361.0" layoutY="240.0" onAction="#signin" onKeyTyped="#passwordFieldKeyTyped" prefHeight="64.0" prefWidth="374.0" promptText="Password" styleClass="text-fields" stylesheets="@login.css">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <font>
+                  <Font name="Calibri Bold Italic" size="19.0" />
+               </font>
+            </PasswordField>
+            <Label alignment="CENTER" layoutY="28.0" prefHeight="72.0" prefWidth="1164.0" text="Log In">
+               <font>
+                  <Font name="Calibri Bold" size="63.0" />
+               </font>
+            </Label>
+            <FontAwesomeIcon glyphName="USER" layoutX="363.0" layoutY="186.0" size="2.2em" text="" />
+            <FontAwesomeIcon glyphName="UNLOCK" layoutX="360.0" layoutY="285.0" size="2.2em" text="" />
+            <ToggleButton fx:id="togglebutton" layoutX="668.0" layoutY="253.0" mnemonicParsing="false" onAction="#togglebutton" styleClass="hide" stylesheets="@../css/login.css" text="show">
+               <font>
+                  <Font name="Calibri" size="18.0" />
+               </font>
+            </ToggleButton>
+            <Label fx:id="shownPassword" layoutX="388.0" layoutY="336.0" text="shownPassword">
+               <font>
+                  <Font name="Calibri" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="signIn_closebtn" layoutX="1823.0" layoutY="-2.0" mnemonicParsing="false" onAction="#signIn_close" prefHeight="42.0" prefWidth="85.0" styleClass="close" stylesheets="@login.css">
+         <graphic>
+            <FontAwesomeIcon fx:id="SignUp_close" fill="#eedbdb" glyphName="REMOVE" size="1.8em" />
+         </graphic>
+      </Button>
+      <Button fx:id="signin_Minizebtn" layoutX="1732.0" layoutY="-2.0" mnemonicParsing="false" onAction="#signIn_minimize" prefHeight="42.0" prefWidth="85.0" styleClass="minimize" stylesheets="@login.css">
+         <graphic>
+            <FontAwesomeIcon fx:id="signin_minize" fill="#f5ecec" glyphName="MINUS" size="1.8em" text="" />
+         </graphic></Button>
+   </children>
+</AnchorPane>

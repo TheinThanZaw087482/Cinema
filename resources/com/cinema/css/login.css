@@ -1,0 +1,154 @@
+.close{
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+	
+}
+.close:hover{
+	-fx-background-color: #e74141;
+	
+}
+
+.minimize{
+	-fx-background-color: transparent;
+	-fx-cursor: hand;
+	
+}
+.minimize:hover{
+	-fx-background-color: black;
+	
+}
+
+.form {
+    -fx-background-image: url("/com/cinema/images/background/m8.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.login-bg{
+
+
+    -fx-background-color:transparent;
+    
+    -fx-background-insets: 0;
+
+
+
+    -fx-blur: 10px;
+    
+   
+    
+}
+
+.hide{
+-fx-background-color:transparent;
+-fx-border-color:grey;
+-fx-border-width:2px;
+
+}
+
+
+
+
+
+
+.text-fields{
+-fx-color:#000;
+
+	-fx-border-color:transparent transparent #000 transparent;
+	-fx-faint-focus-color:transparent;
+    -fx-background-color: transparent;
+   
+    
+       -fx-padding: 3px 3px 3px 40px; 
+       -fx-font-size:24px;
+      
+       
+       
+       
+    }
+    .text-fields:focused{
+    
+    -fx-text-fill:white;
+    }
+    #icon{
+    -fx-translate-x:10px;
+    -fx-translate-y:3px;
+    }
+    
+
+.signin{
+	
+	-fx-border-color:#000 #000 #000 #000;
+	-fx-background-color:transparent;
+	-fx-focus-color:transparent;
+	-fx-faint-focus-color:transparent;
+	-fx-border-radius:15%;
+	 -fx-effect: dropshadow(gaussian, #999, 1, 0, 0, 0);
+	 -fx-font-size:20px;
+    }
+    
+       .signin:pressed {
+    -fx-background-color: grey;
+    -fx-effect: dropshadow(gaussian, #666, 0, 0, 0, 9); 
+    -fx-translate-y: 4px; 
+    -fx-border-radius:15%;
+}
+    #link{
+    -fx-text-fill:black;
+    -fx-underline:false;
+    }
+    
+     .combo-box{
+   	-fx-border-color:transparent transparent #000 transparent;
+	-fx-background-color:transparent;
+	-fx-focus-color:#411528;
+	-fx-faint-focus-color:#411528;
+	-fx-font-size: 24px;  /* Font size */
+    -fx-font-family: Calibri;
+    -fx-padding: 5px 5px 5px 20px; 
+   
+  }
+  
+
+  
+  
+  .img-photo{
+
+-fx-border-radius:100%;
+-fx-background-radius:100%;
+-fx-border-width:3px;
+	-fx-border-color:#fff;
+
+}
+
+#img{
+-fx-border-radius:100%;
+-fx-background-radius:100%;
+-fx-background-insets:0;
+-fx-background-color:transparent;
+-fx-shape:"M 0 50 A 50 50 0 1 1 100 50 A 50 50 0 1 1 0 50 Z";
+-fx-clip-shape:"M 0 50 A 50 50 0 1 1 100 50 A 50 50 0 1 1 0 50 Z";
+
+
+}
+
+.signup-bg{
+
+-fx-background-color: linear-gradient(
+        		  from 100% 0% to 0% 100%, 
+        #5f4b91, 
+		#7261b8 , 
+        
+        #7261b8 , 
+        #5f4b91
+    );
+}
+  
+      
+
+    
+    
+    
+    
+    
