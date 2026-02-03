@@ -478,7 +478,7 @@ public class DashboardControllerAdmin implements Initializable {
 		sortedData.comparatorProperty().bind(editscreening_tableView.comparatorProperty());
 
 		// Set sorted data to TableView
-		editscreening_tableView.setItems(sortedData);
+		editscreening_tableView.setItems(sortedData) ;
 	}
 
 	Screening ScreentoUpdate;
