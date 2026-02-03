@@ -85,6 +85,6 @@ public class LoadingController {
             });
         });
 
-        new Thread(loadDashboardTask).start();
+        new Thread(loadDashboardTask).start() ;
     }
 }
